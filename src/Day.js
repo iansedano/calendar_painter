@@ -1,4 +1,10 @@
 import React from "react"
 
-const Day = () => <p>Day</p>
+import TimeBlock from "./TimeBlock.js"
+import styles from "./Day.module.css"
+
+console.log(styles, "Day")
+
+const Day = () => <><TimeBlock/><TimeBlock/><TimeBlock/></>
 export default Day
+

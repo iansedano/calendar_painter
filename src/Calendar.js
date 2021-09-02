@@ -4,9 +4,7 @@ import Day from "./Day.js"
 
 
 const MainCalContainer = () => {
-
-    
-    return <p>Hello</p>
+    return <><Day/><Day/><Day/></>
 }
 
 const Calendar = () => <MainCalContainer/>
