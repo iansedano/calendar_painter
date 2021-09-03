@@ -1,8 +1,25 @@
+.Calendar {
+    height:80vh;
+}
+
+.Week {
+    display:flex;
+    flex-direction: row;
+    height:100%;
+}
+
 .Day {
     background-color: red;
 }
 
+.time-block-container {
+    display:flex;
+    flex-direction:column;
+    height:90%;
+    
+}
+
 .TimeBlock {
     background-color: blue;
-    height: 2px
+    align-items: stretch;
 }

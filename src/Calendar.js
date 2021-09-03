@@ -6,12 +6,12 @@ import "./index.css"
 const activeBrush = React.createContext(null)
 
 export default function Calendar() {
-    return <>
+    return <div className="Calendar">
         <activeBrush.Provider value={null}>
             <Week/>
             <Palette/>
         </activeBrush.Provider>
-    </>
+    </div>
 }
 
 
