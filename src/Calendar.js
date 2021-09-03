@@ -1,13 +1,17 @@
 import React from "react"
+import Week from "./Week.js"
+import Palette from "./Palette.js"
+import "./index.css"
 
-import Day from "./Day.js"
+const activeBrush = React.createContext(null)
 
-
-const MainCalContainer = () => {
-    return <><Day/><Day/><Day/></>
+export default function Calendar() {
+    return <>
+        <activeBrush.Provider value={null}>
+            <Week/>
+            <Palette/>
+        </activeBrush.Provider>
+    </>
 }
-
-const Calendar = () => <MainCalContainer/>
-export default Calendar
 
 
