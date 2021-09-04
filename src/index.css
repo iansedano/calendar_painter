@@ -1,25 +1,38 @@
 .Calendar {
+    display:flex;
+    flex-direction: row;
     height:80vh;
+    width:90vw;
 }
 
 .Week {
-    display:flex;
-    flex-direction: row;
     height:100%;
+    width:80%;
+    border-collapse: collapse;
+    border-spacing:0;
 }
 
-.Day {
-    background-color: red;
+.row {
 }
 
-.time-block-container {
-    display:flex;
-    flex-direction:column;
-    height:90%;
-    
+.cell {
+    border: 1px solid black;
+    padding: 0px;
+    width: calc(100%/9);
 }
 
-.TimeBlock {
-    background-color: blue;
-    align-items: stretch;
+.row-label {
+
+}
+
+.sub-cell {
+    height: 25%;
+}
+
+.unselectable {
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }

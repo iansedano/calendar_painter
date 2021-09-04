@@ -1,3 +1,7 @@
 import React from "react"
 
-export default function Palette(){return null}
+export default function Palette(){
+    return (
+        <div>Hello</div>
+    )
+}
