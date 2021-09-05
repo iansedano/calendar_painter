@@ -15,7 +15,7 @@ function HeaderRow({headers}){
     return (
         <tr className="row HeaderRow">
             {headers.map((header,i) => {
-                return <th key={header} className="cell">{header}</th>
+                return <th key={header} index={i} className="cell">{header}</th>
             })}
         </tr>
     )
@@ -29,10 +29,10 @@ function TimeBlockRow({index}){
     
     return (
         <tr className="row TimeBlockRow" index={index}>
-            <th className="row-label">{timeString}</th>
+        <th className="row-label" index={0}>{timeString}</th>
             {
                 new Array(7).fill('').map((_, i) => {
-                    return <TimeBlock key={i} divisions={divisions}/>
+                    return <TimeBlock key={i} index={i} divisions={divisions}/>
                 })
             }
         </tr>
