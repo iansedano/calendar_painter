@@ -8,8 +8,10 @@ scheme.from_hue(21)
   
 const colors = scheme.colors()
 
+console.log(colors)
+
 export const EVENT_COLOR_MAP = eventType.reduce(
-    (m, eventName, i) => m.set(eventName, colors[i]), new Map()
+    (m, eventName, i) => m.set(eventName, `#${colors[i]}`), new Map()
 )
 
 export const ACTION_ENUM = Object.freeze({

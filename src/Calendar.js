@@ -1,6 +1,6 @@
 import React, {useReducer} from "react"
 
-import reducer, {initialState} from "state"
+import reducer, {initialState, EVENT_COLOR_MAP} from "state"
 import Week from "./Week.js"
 import Palette from "./Palette.js"
 
@@ -14,14 +14,16 @@ export default function Calendar() {
   return(
     <div
       className="unselectable Calendar" // unselectable CSS used as fallback to JavaScript below
-      ref={(node)=>node.addEventListener("selectstart", (e)=>{
-        e.preventDefault()
-        return false
-      })} // adding via ref as per https://github.com/facebook/react/issues/16521
+      ref={(node)=>{
+          if (node) node.addEventListener("selectstart", (e)=>{ // without "if" fails when updating context
+            e.preventDefault()
+            return false
+          })
+      }} // adding via ref as per https://github.com/facebook/react/issues/16521
       onMouseDown={()=> false}
       onMouseOver={(e) => {
         if (e.buttons === 1 && e.target.classList.contains("brushable")) {
-          e.target.style.backgroundColor = "red"
+          e.target.style.backgroundColor = EVENT_COLOR_MAP.get(state.selectedEventType)
         }
         return false
       }}
