@@ -4,7 +4,6 @@ import TimeBlock from "TimeBlock"
 import settings from "Calendar"
 
 export default function WeekRow({type, data}) {
-    console.log(type, data)
     if (type === "header"){
         return <HeaderRow headers={data}/>
     } else if (type === "normal") {

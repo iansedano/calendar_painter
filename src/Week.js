@@ -11,7 +11,10 @@ export default function Week() {
     const rows = 24 * 60 * 60 / labelSize
          
     return <table className="Week">
+    <thead>
        <WeekRow type="header" data={headers}/>
+       </thead>
+       <tbody>
        {
            new Array(rows).fill("").map((_,i) => {
                return <WeekRow
@@ -21,5 +24,6 @@ export default function Week() {
                />
            })
        }
+    </tbody>
     </table>
 }

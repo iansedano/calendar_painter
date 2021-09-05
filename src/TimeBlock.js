@@ -15,16 +15,4 @@ export default function TimeBlock({divisions}) {
             }
         </td>
     )
-        
-    //     <div
-    //         className="TimeBlock"
-            
-    //         onMouseOver={(e) => {
-    //             console.log(e)
-    //             if (e.buttons === 1) {
-    //                 e.target.style.backgroundColor = "red"
-    //             }
-    //         }}
-    //     />
-    // )
 }
