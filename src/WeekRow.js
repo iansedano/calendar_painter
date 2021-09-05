@@ -1,7 +1,7 @@
 import React, {useContext} from "react"
 
 import TimeBlock from "TimeBlock"
-import settings from "Calendar"
+import {settings} from "Calendar"
 
 export default function WeekRow({type, data}) {
     if (type === "header"){
@@ -22,8 +22,9 @@ function HeaderRow({headers}){
 }
 
 function TimeBlockRow({index}){
-    const timeBlockSize = useContext(settings)
-    const divisions = 60 / 15
+    const timeBlockSize = useContext(settings).state.timeBlockSize
+    const divisions = 60 * 60 / timeBlockSize
+
     
     const timeString = String(index).length === 1 ? `0${index}:00` : `${index}:00`
     
