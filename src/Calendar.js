@@ -21,12 +21,6 @@ export default function Calendar() {
           })
       }} // adding via ref as per https://github.com/facebook/react/issues/16521
       onMouseDown={()=> false}
-      onMouseOver={(e) => {
-        if (e.buttons === 1 && e.target.classList.contains("brushable")) {
-          e.target.style.backgroundColor = EVENT_COLOR_MAP.get(state.selectedEventType)
-        }
-        return false
-      }}
     >
       <settings.Provider value ={{state, dispatch}}>
         <Week/>

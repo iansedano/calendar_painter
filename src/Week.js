@@ -1,7 +1,8 @@
 import React, {useContext, useState} from "react"
 
 import {settings} from 'Calendar'
-import WeekRow from 'WeekRow'
+import HeaderRow from 'HeaderRow'
+import TimeBlockRow from 'TimeBlockRow'
 
 
 export default function Week() {
@@ -9,31 +10,29 @@ export default function Week() {
   
   const context = useContext(settings).state
   const labelSize = context.labelSize
-  const rows = 24 * 60 * 60 / labelSize
+  const rows = 24 * 60 * 60 / labelSize // 24 usually
   
   const timeBlockSize = context.timeBlockSize
   const divisions = 60 * 60 / timeBlockSize
   
-  console.log(divisions, "dIVS")
+  const blankWeekEventState = new Array(24*divisions)
+  for (let i = 0; i != 24*divisions; i++) blankWeekEventState[i] = new Array(7)
   
-  const weekEventState = new Array(7)
-  for (let i = 0; i != 7; i++) weekEventState[i] = new Array(24*divisions)
-  
-  const [weekEvents, setWeekEvents] = useState(weekEventState)
-  
-  console.log(weekEvents)
+  const [weekEvents, setWeekEvents] = useState(blankWeekEventState)
   
   return <table className="Week">
     <thead>
-      <WeekRow type="header" data={headers}/>
+      <HeaderRow headers={headers}/>
     </thead>
     <tbody>
       {
         new Array(rows).fill("").map((_,i) => {
-          return <WeekRow
+          return <TimeBlockRow
             key={i}
-            type="normal"
-            data={i}
+            index={i}
+            weekEvents={weekEvents}
+            sliceIndices={[i*divisions, i*divisions + 4]}
+            setWeekEvents={setWeekEvents}
           />
         })
       }
