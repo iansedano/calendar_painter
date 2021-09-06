@@ -1,8 +1,8 @@
 import React, {useReducer} from "react"
 
 import reducer, {initialState, EVENT_COLOR_MAP} from "state"
-import Week from "./Week.js"
-import Palette from "./Palette.js"
+import Week from "Week"
+import Palette from "Palette"
 
 import "./index.css"
 

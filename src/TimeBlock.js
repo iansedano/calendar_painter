@@ -3,17 +3,11 @@ import React, {useContext} from "react"
 import {EVENT_COLOR_MAP} from "state"
 import {settings} from "Calendar"
 
-
-
-
-
 export default function TimeBlock({
   divisions, sliceIndices, setWeekEvents, weekEvents, hourIndex, weekDayIndex
 }) {
   
   const state = useContext(settings).state
-  
-  
   
   return (
     <td className="cell" index={hourIndex + 1}>
@@ -28,7 +22,7 @@ export default function TimeBlock({
           }}
           onMouseOver={(e) => {
             if (e.buttons === 1) {
-              console.log(weekDayIndex)
+              console.log("fire")
               const newWeekEvents = [...weekEvents]
               newWeekEvents[hourIndex * 4 + i][weekDayIndex] = state.selectedEventType
               setWeekEvents(newWeekEvents)

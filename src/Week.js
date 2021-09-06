@@ -15,6 +15,10 @@ export default function Week() {
   const timeBlockSize = context.timeBlockSize
   const divisions = 60 * 60 / timeBlockSize
   
+  // TODO Don't create array every time?
+  // But maybe I need to, if I am going to change increments...
+  // But if I'm going to change increments, then there will need to be a conversion
+  // of the state array...
   const blankWeekEventState = new Array(24*divisions)
   for (let i = 0; i != 24*divisions; i++) blankWeekEventState[i] = new Array(7)
   
