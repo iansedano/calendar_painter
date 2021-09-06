@@ -1,3 +1,11 @@
+/**
+ * https://github.com/facebook/react/issues/14110
+ * https://github.com/facebook/react/issues/14110#issuecomment-483680377
+ * 
+ * https://github.com/facebook/react/pull/14569
+ * https://github.com/reactjs/rfcs/pull/119
+ */
+
 import ColorScheme from "color-scheme"
 
 const eventType = ["Sleep","S","F","SW","DW","M","W","IS","E","H","P","C"]
