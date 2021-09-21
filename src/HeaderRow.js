@@ -1,6 +1,6 @@
 import React, {useContext} from "react"
 
-export default function HeaderRow({headers}){
+export function HeaderRow({headers}){
     return (
         <tr className="row HeaderRow">
             {headers.map((header,i) => {

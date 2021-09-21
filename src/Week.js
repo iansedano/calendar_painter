@@ -1,7 +1,7 @@
 import React, {useContext, useState} from "react"
 
 import {settings} from 'Calendar'
-import HeaderRow from 'HeaderRow'
+import {HeaderRow} from 'HeaderRow'
 import TimeBlockRow from 'TimeBlockRow'
 
 

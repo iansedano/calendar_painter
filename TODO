@@ -1,0 +1,4 @@
+☐ Branch out the different approaches
+	☐ Continue with `useMemo` and `useReducer` in similar structure as now
+☐ Set up pseudo backend? Just a copy of the JSON output. Event list. GCal call...
+☐ Set up dragging event listener, that starts drag calculates distance and intersections
